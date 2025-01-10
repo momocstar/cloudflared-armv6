@@ -63,6 +63,8 @@ jobs:
           sudo apt update
           sudo apt install -y build-essential gcc-arm-linux-gnueabi libdigest-sha-perl
           gem install fpm
+          sudo apt install -y upx-ucl  # 安装UPX
+
 
       - name: Build
         shell: bash
@@ -85,7 +87,7 @@ jobs:
 
         env:
           TARGET_ARCH: arm
-          TARGET_ARM: 6
+          TARGET_ARM: 8
           VERSION: ${{ env.CLOUDFLARED_VERSION }}
 
       - name: Calculate SHA256 checksum
@@ -99,7 +101,17 @@ jobs:
           $(for filename in cloudflared*; do shasum -a 256 $filename | awk '{print $2": "$1}' ; done)
           \`\`\`
           EOF
-
+  
+      - name: Compress with UPX
+        working-directory: cloudflared/built_artifacts
+        shell: bash
+        run: |
+          if [ -f cloudflared ]; then
+            upx --ultra-brute cloudflared
+          else
+            echo "Cloudflared binary not found. Skipping compression."
+          fi
+            
       - name: Release
         uses: ncipollo/release-action@v1
         with:
