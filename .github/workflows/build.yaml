@@ -20,10 +20,10 @@ jobs:
       contents: write
     env:
       GOOS: linux
-      GOARCH: arm
+      GOARCH: arm64
       GOARM: 6
       CGO_ENABLED: 0
-      CC: arm-linux-gnueabi-gcc
+      CC: aarch64-linux-gnu-gcc
       BUILD_ID: ${{ github.run_number }}
     steps:
       - name: Checkout
