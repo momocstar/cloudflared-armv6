@@ -86,8 +86,8 @@ jobs:
           mv cloudflared $ARTIFACT_DIR/cloudflared
 
         env:
-          TARGET_ARCH: arm
-          TARGET_ARM: 8
+          TARGET_ARCH: armv8
+          TARGET_ARM: 6
           VERSION: ${{ env.CLOUDFLARED_VERSION }}
 
       - name: Calculate SHA256 checksum
