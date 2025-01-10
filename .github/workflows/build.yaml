@@ -107,7 +107,7 @@ jobs:
         shell: bash
         run: |
           if [ -f cloudflared ]; then
-            upx --ultra-brute cloudflared
+            upx --lzma --best cloudflared
           else
             echo "Cloudflared binary not found. Skipping compression."
           fi
