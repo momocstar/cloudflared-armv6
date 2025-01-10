@@ -1,4 +1,4 @@
-# Cloudflared ARMv6 Build Repository
+# Cloudflared ARMv8 Build Repository
 
 Unofficial builds for Raspberry Pi 1, Zero, and Zero W
 
