@@ -16,7 +16,7 @@ cloudflareHome=/tmp/cloudflare
 # 创建目标目录
 mkdir -p $cloudflareHomee
 
-token=eyJhIjoiYmIzNDIyZDI1MjFhZjc1NzhhOGNiYjIyNzUxYmQ5OGIiLCJ0IjoiZmU1ZGJhNTAtMTg1NC00MmQ5LTlmNWUtOThkM2Q5OWU5NDdhIiwicyI6IlpUbGhNR1ZrTkdRdFpEQTNOeTAwWXpWbUxXSmhOR0l0TlRNeVpUTTRPV0UxWmpnMCJ9
+token=你的TOKEN
 # 定义文件路径和下载URL
 FILE_PATH=${cloudflareHome}/cloudflared
 DOWNLOAD_URL="https://github.com/momocstar/cloudflared-armv8/releases/download/2025.1.0-5/cloudflared"
